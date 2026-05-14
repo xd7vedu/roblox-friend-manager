@@ -1,0 +1,24 @@
+{
+  "name": "roblox-friend-manager",
+  "version": "1.0.0",
+  "description": "Roblox friend request manager with bot detection",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "connect-pg-simple": "^7.0.0",
+    "passport": "^0.6.0",
+    "passport-discord": "^0.1.4",
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.3.1",
+    "pg": "^8.11.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
