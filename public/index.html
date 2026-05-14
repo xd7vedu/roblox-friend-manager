@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roblox Friend Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen">
+      <div class="login-container">
+        <h1>Roblox Friend Manager</h1>
+        <form id="login-form">
+          <input type="text" id="username" placeholder="Username" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+        <p>or</p>
+        <button id="discord-login" class="discord-btn">Continue with Discord</button>
+        <p>Don't have an account? <a href="#" id="toggle-register">Register</a></p>
+      </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="main-app" class="hidden">
+      <nav class="navbar">
+        <h1>Roblox Friend Manager</h1>
+        <div class="nav-right">
+          <button id="theme-toggle">🌙</button>
+          <span id="username-display"></span>
+          <button id="logout-btn">Logout</button>
+        </div>
+      </nav>
+
+      <!-- Announcement Banner -->
+      <div id="announcement" class="announcement hidden"></div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="requests">Requests</button>
+        <button class="tab-btn" data-tab="bot-lists">Bot Lists</button>
+        <button class="tab-btn" data-tab="whitelist">Whitelist</button>
+        <button class="tab-btn" data-tab="log">Activity Log</button>
+        <button class="tab-btn" data-tab="admin" id="admin-tab">Admin</button>
+      </div>
+
+      <!-- Requests Tab -->
+      <div id="requests" class="tab-content active">
+        <div class="controls">
+          <input type="text" id="roblox-cookie" placeholder="Paste your .ROBLOSECURITY cookie" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+          <button id="connect-btn">Connect Roblox</button>
+          <button id="scan-btn" disabled>Scan Requests</button>
+          <select id="filter-select">
+            <option value="all">All</option>
+            <option value="bot">Bots</option>
+            <option value="suspicious">Suspicious</option>
+            <option value="clean">Clean</option>
+          </select>
+        </div>
+        <div id="requests-list" class="requests-list"></div>
+      </div>
+
+      <!-- Bot Lists Tab -->
+      <div id="bot-lists" class="tab-content">
+        <h2>Bot Usernames</h2>
+        <textarea id="bot-usernames" placeholder="One username per line" style="width: 100%; height: 150px;"></textarea>
+        <button id="save-bot-usernames">Save</button>
+
+        <h2>Bot User IDs</h2>
+        <textarea id="bot-user-ids" placeholder="One ID per line" style="width: 100%; height: 150px;"></textarea>
+        <button id="save-bot-user-ids">Save</button>
+      </div>
+
+      <!-- Whitelist Tab -->
+      <div id="whitelist" class="tab-content">
+        <h2>Trusted Users</h2>
+        <div id="whitelist-list" class="table-container"></div>
+      </div>
+
+      <!-- Activity Log Tab -->
+      <div id="log" class="tab-content">
+        <h2>Activity Log</h2>
+        <div id="activity-log" class="table-container"></div>
+      </div>
+
+      <!-- Admin Tab -->
+      <div id="admin" class="tab-content">
+        <h2>Admin Panel</h2>
+        <div id="admin-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
